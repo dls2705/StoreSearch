@@ -16,11 +16,68 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rEG-Lg-i7r">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultCell" textLabel="zEW-tO-3Y0" detailTextLabel="zfH-6Z-SZ8" style="IBUITableViewCellStyleSubtitle" id="esm-Sc-4Ef">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="esm-Sc-4Ef" id="R0L-Zq-dbu">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zEW-tO-3Y0">
+                                                    <rect key="frame" x="15" y="5" width="32" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zfH-6Z-SZ8">
+                                                    <rect key="frame" x="15" y="25" width="41" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="YtV-bC-Mrz"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="arB-X9-Vsd"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="App name, Artist, Songs, Album" translatesAutoresizingMaskIntoConstraints="NO" id="ixx-aa-1sc">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="BcU-ab-nXS"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ixx-aa-1sc" secondAttribute="trailing" id="KPO-ye-b02"/>
+                            <constraint firstItem="ixx-aa-1sc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TP0-pJ-H5u"/>
+                            <constraint firstAttribute="trailing" secondItem="rEG-Lg-i7r" secondAttribute="trailing" id="U8J-YL-ZtU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rEG-Lg-i7r" secondAttribute="bottom" id="byr-r2-kdQ"/>
+                            <constraint firstItem="ixx-aa-1sc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="naq-ES-n3G"/>
+                            <constraint firstItem="rEG-Lg-i7r" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="r5P-DT-RJP"/>
+                            <constraint firstItem="rEG-Lg-i7r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sqZ-Ip-en7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="ixx-aa-1sc" id="B6B-7h-HBb"/>
+                        <outlet property="tableView" destination="rEG-Lg-i7r" id="ijI-PO-HaN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="245" y="350"/>
         </scene>
     </scenes>
 </document>
